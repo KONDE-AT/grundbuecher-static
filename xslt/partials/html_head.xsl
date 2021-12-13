@@ -24,17 +24,17 @@
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/openseadragon.min.js"></script>
             <!-- Matomo -->
-            <script type="text/javascript">
-                var _paq = _paq || [];
+            <script>
+                var _paq = window._paq = window._paq || [];
                 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
                 _paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 (function() {
                 var u="https://matomo.acdh.oeaw.ac.at/";
-                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
                 _paq.push(['setSiteId', '105']);
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
                 })();
             </script>
             <!-- End Matomo Code -->
