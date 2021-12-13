@@ -25,7 +25,7 @@
                             </div>
                         </li>
                     </ul>
-                    <form method="get" action="ft_search.html" class="form-inline my-2 my-lg-0">
+                    <form method="get" action="search.html" class="form-inline my-2 my-lg-0">
                         <input name="searchexpr" class="form-control mr-sm-2" type="text" placeholder="Suche im Volltext" aria-label="Search" />
                         <button class="btn btn-main btn-outline-primary btn-mg" type="submit">Suche</button>
                     </form>
