@@ -45,7 +45,7 @@
                 <a href="imprint.html">Impressum/Imprint</a>
                 <div class="row" style="padding-top: 20px;">
                     <div class="col-sm">
-                        <a href="https://github.com/KONDE-AT/grundbuecher">
+                        <a href="https://github.com/KONDE-AT/grundbuecher-static">
                             <em class="fab fa-github-square fa-2x"/>
                         </a>
                     </div>

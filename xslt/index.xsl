@@ -35,7 +35,7 @@
                                     <h2 style="color:white">Digitale Edition</h2>
                                     <h5 style="margin-top:1.5em; margin-left: 40%">Dieses Portal erschließt mit den 'Wiener Grundbücher' einen bedeutenden Quellenbestand zu den (Grund)Besitzverhältnisse Wiens zwischen 1438 und 1473.</h5>
                                     <p>
-                                        <a class="btn btn-main btn-outline-primary btn-lg" href="toc.html?collection=editions" role="button">Alle Dokumente</a>
+                                        <a class="btn btn-main btn-outline-primary btn-lg" href="toc.html" role="button">Alle Dokumente</a>
                                     </p>
                                 </div>
                                 <p style="color:white">

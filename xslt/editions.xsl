@@ -28,7 +28,12 @@
         <xsl:value-of select="replace(tokenize(data(tei:TEI/@next), '/')[last()], '.xml', '.html')"/>
     </xsl:variable>
     <xsl:variable name="path2source"></xsl:variable>
-    
+    <xsl:variable name="doc_nr">
+        <xsl:value-of select="substring-after(tokenize(data(tei:TEI/@xml:id), '_')[1], 'e')"/>
+    </xsl:variable>
+    <xsl:variable name="self_link">
+        <xsl:value-of select="replace(data(tei:TEI/@xml:id), '.xml', '.html')"/>
+    </xsl:variable>
     <xsl:template match="/">
         <xsl:variable name="doc_title">
             <xsl:value-of select=".//tei:title[@type='main'][1]/text()"/>
@@ -131,7 +136,12 @@
                                     <h3>Zitierhinweis</h3>
                                     <blockquote class="blockquote">
                                         <cite title="Source Title">
-                                            whatever
+                                            <xsl:value-of select=".//tei:title[@type='main']/text()"/>, Nr. <xsl:value-of select="$doc_nr"/>, In: Ertl, Thomas/Andorfer,
+                                            Peter/Fiska,
+                                            Patrick/Weinbergmair, Richard/Grünwald, Korbinian: Ein Wiener
+                                            Grundbuch
+                                            des 15. Jahrhunderts. Digitale Edition des Satzbuch CD (1438-1473).
+                                            (Mai 2021), full text: https://grundbuecher.acdh.oeaw.ac.at/<xsl:value-of select="$self_link"/>
                                         </cite>
                                     </blockquote>
                                 </p>
