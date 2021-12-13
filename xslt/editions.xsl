@@ -74,9 +74,10 @@
                                                 <i class="fas fa-info" title="show more info about the document" data-toggle="modal" data-target="#exampleModalLong"/>
                                             </a>
                                             |
-                                            <a href="{$path2source}">
+                                            <a>
+                                                <xsl:attribute name="href"><xsl:value-of select="concat('https://github.com/KONDE-AT/grundbuecher-static/blob/master/data/editions/', ./tei:TEI/@xml:id)"/></xsl:attribute>
                                                 <i class="fas fa-download" title="show TEI source"/>
-                                            </a> |
+                                            </a>
                                         </h2>
                                     </div>
                                     <div class="col-md-2" style="text-align:right">
