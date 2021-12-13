@@ -93,15 +93,7 @@
                         sowie dem Friedrich-Meinecke-Institut der Freien Universität Berlin.
                         Ermöglicht wurde die Edition durch finanzielle Unterstützung der <ref target="http://d-nb.info/gnd/1090525168">Kulturabteilung der Stadt Wien
                             (MA7)</ref>. Die technische Umsetzung erfolgte im Rahmen des <ref target="http://www.digitale-edition.at/">KONDE Projektes</ref>. </p>
-                    <p>Der Code der vorliegenden Webapplikation kann auf <ref target="https://github.com/">GitHub</ref> eingesehen werden, ebenso wie die XML/TEI Daten der Grundbuchedition.
-                    <list>
-                        <item>
-                            <ref target="https://github.com/KONDE-AT/grundbuecher">https://github.com/KONDE-AT/grundbuecher</ref>
-                        </item>
-                        <item>
-                            <ref target="https://github.com/KONDE-AT/grundbuecher-data">https://github.com/KONDE-AT/grundbuecher-data</ref>
-                        </item>
-                    </list>
+                    <p>Der Code der vorliegenden Webapplikation kann auf <ref target="https://github.com/KONDE-AT/grundbuecher-static">https://github.com/KONDE-AT/grundbuecher-static</ref> eingesehen werden, ebenso wie die XML/TEI Daten der Grundbuchedition.
                     </p>
                 </div>
             </div>
