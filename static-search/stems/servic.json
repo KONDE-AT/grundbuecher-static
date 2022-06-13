@@ -1,1 +1,1 @@
-{"stem":"servic","instances":[{"docId":"imprint","docUri":"imprint.html","score":2,"contexts":[{"form":"service","weight":"2","pos":25,"context":"...publisher, responsible for content and editorial office, <mark>service<\/mark> provider:","fid":"page"}]}]}
+{"stem":"servic","instances":[{"docId":"imprint","docUri":"imprint.html","score":1,"contexts":[{"form":"service","weight":"1","pos":25,"context":"...publisher, responsible for content and editorial office, <mark>service<\/mark> provider:","fid":"page"}]}]}
