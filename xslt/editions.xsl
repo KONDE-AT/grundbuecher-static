@@ -14,12 +14,12 @@
     <xsl:variable name="signatur">
         <xsl:value-of select=".//tei:institution/text()"/>, <xsl:value-of select=".//tei:repository[1]/text()"/>, <xsl:value-of select=".//tei:msIdentifier/tei:idno[1]/text()"/>
     </xsl:variable>
-    <xsl:variable name="IIIFBase">https://iiif.acdh.oeaw.ac.at/grundbuecher/</xsl:variable>
+    <xsl:variable name="IIIFBase">https://id.acdh.oeaw.ac.at/grundbuecher-facs/</xsl:variable>
     <xsl:variable name="InfoJson">
-        <xsl:value-of select="concat($IIIFBase, substring-before(data(.//tei:graphic[1]/@url), '.'), '/info.json')"/>
+        <xsl:value-of select="concat($IIIFBase, data(.//tei:graphic[1]/@url), '?format=IIIF')"/>
     </xsl:variable>
     <xsl:variable name="IIIFViewer">
-        <xsl:value-of select="substring-before($InfoJson, 'info.json')"/>
+        <xsl:value-of select="$InfoJson"/>
     </xsl:variable>
     <xsl:variable name="prev">
         <xsl:value-of select="replace(tokenize(data(tei:TEI/@prev), '/')[last()], '.xml', '.html')"/>
@@ -266,9 +266,10 @@
                         var source = "<xsl:value-of select="$InfoJson"/>";
                         var viewer = OpenSeadragon({
                         id: "osd_viewer",
-                        tileSources: [
-                        source
-                        ],
+                        tileSources: {
+                            type: 'image',
+                            url: source
+                        },
                         prefixUrl:"https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.1/images/",
                         });
                     </script>
