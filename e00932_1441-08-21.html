@@ -78,7 +78,7 @@
                         
                         </div>
                      <div class="col-md-7" style="text-align: center;">
-                        <div style="width: 100%; height: 100%" id="osd_viewer"></div><a target="_blank" href="https://iiif.acdh.oeaw.ac.at/grundbuecher/WSTLA_Grundbuch_Stadt_Wien_B1_34_SatzbuchCD_0416/">
+                        <div style="width: 100%; height: 100%" id="osd_viewer"></div><a target="_blank" href="https://id.acdh.oeaw.ac.at/grundbuecher-facs/WSTLA_Grundbuch_Stadt_Wien_B1_34_SatzbuchCD_0416.jpg?format=IIIF">
                            open image in new window
                            </a></div>
                   </div>
@@ -159,12 +159,13 @@
                </div>
             </div>
          </div><script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.1/openseadragon.min.js"></script><script type="text/javascript">
-                        var source = "https://iiif.acdh.oeaw.ac.at/grundbuecher/WSTLA_Grundbuch_Stadt_Wien_B1_34_SatzbuchCD_0416/info.json";
+                        var source = "https://id.acdh.oeaw.ac.at/grundbuecher-facs/WSTLA_Grundbuch_Stadt_Wien_B1_34_SatzbuchCD_0416.jpg?format=IIIF";
                         var viewer = OpenSeadragon({
                         id: "osd_viewer",
-                        tileSources: [
-                        source
-                        ],
+                        tileSources: {
+                            type: 'image',
+                            url: source
+                        },
                         prefixUrl:"https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.1/images/",
                         });
                     </script><footer class="main-footer">
