@@ -53,17 +53,12 @@
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"></xsl:with-param>
                 </xsl:call-template>
-                <style>
-                    .navBarNavDropdown ul li:nth-child(2) {
-                        display: none !important;
-                    }
-                </style>
             </head>
             <body class="d-flex flex-column h-100">
                 <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0 flex-grow-1">
                     <div class="container">
-                        <div class="row">
+                        <div class="row pt-3">
                             <div class="col-md-2 col-lg-2 col-sm-12 text-start">
                                 <xsl:if test="ends-with($prev,'.html')">
                                     <a>
@@ -78,20 +73,22 @@
                             </div>
                             <div class="col-md-8 col-lg-8 col-sm-12 text-center">
                                 <h1>
-                                    <xsl:value-of select="$doc_title"/>
+                                    <span class="pe-2"><xsl:value-of select="$doc_title"/></span>
+                                    <button type="button" class="btn btn-outline-secondary">
+                                        <i class="bi bi-info-square fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Informationen zum Dokument" visually-hidden="true">
+                                            <span class="visually-hidden">Informationen zum Dokument</span>
+                                        </i>
+                                    </button>
                                 </h1>
                                 <div>
                                     <a href="{$teiSource}">
-                                        <i class="bi bi-download fs-2" title="Zum TEI/XML Dokument" visually-hidden="true">
+                                        <i class="bi bi-download fs-2 pe-1" title="Zum TEI/XML Dokument" visually-hidden="true">
                                             <span class="visually-hidden">Zum TEI/XML Dokument</span>
                                         </i>
-                                        <a>
-                                            <i class="fas fa-info" title="show more info about the document" data-toggle="modal" data-target="#exampleModalLong">info</i>
-                                        </a>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-2 col-lg-2 col-sm-12 text-start">
+                            <div class="col-md-2 col-lg-2 col-sm-12 text-end">
                                 <xsl:if test="ends-with($next, '.html')">
                                     <a>
                                         <xsl:attribute name="href">
@@ -103,22 +100,19 @@
                                     </a>
                                 </xsl:if>
                             </div>
-                            <div id="editor-widget">
-                                <xsl:call-template name="annotation-options"></xsl:call-template>
-                            </div>
                         </div>
                         
-                        <div class="row">
-                            <div class="col-md-5">
+                        <div class="row pt-3">
+                            <div class="col-md-5 pt-5">
                                 <xsl:apply-templates select="//tei:text"/>
                             </div>
-                            <div class="col-md-7" style="text-align: center;">
-                                <div style="width: 100%; height: 100%" id="osd_viewer"/>
+                            <div class="col-md-7 text-center">
+                                <div id="osd_viewer"/>
                                 <a target="_blank">
                                     <xsl:attribute name="href">
                                         <xsl:value-of select="$IIIFViewer"/>
                                     </xsl:attribute>
-                                    open image in new window
+                                    Bild in neuem Fenster öffenen
                                 </a>
                             </div>
                         </div>
@@ -161,19 +155,16 @@
                             </p>
                         </div>
                         
-                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">
+                                        <h3 class="modal-title" id="exampleModalLongTitle">
                                             <xsl:for-each select="//tei:fileDesc/tei:titleStmt/tei:title">
                                                 <xsl:apply-templates/>
                                                 <br/>
                                             </xsl:for-each>
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">x</span>
-                                        </button>
+                                        </h3>
                                     </div>
                                     <div class="modal-body">
                                         <table class="table table-striped">
@@ -192,7 +183,7 @@
                                                                     <xsl:value-of select="."/>
                                                                 </abbr>
                                                                 <br/>
-                                                            </xsl:for-each><!--<xsl:apply-templates select="//tei:msIdentifier"/>-->
+                                                            </xsl:for-each>
                                                         </td>
                                                     </tr>
                                                 </xsl:if>
@@ -268,7 +259,7 @@
                                         
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
                                     </div>
                                 </div>
                             </div>
@@ -279,8 +270,17 @@
                 </main>
                 <xsl:call-template name="html_footer"/>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"/>
-                <script src="https://unpkg.com/de-micro-editor@0.3.4/dist/de-editor.min.js"></script>
-                <script type="text/javascript" src="js/run.js"></script>
+                <script type="text/javascript">
+                    var source = "<xsl:value-of select="$InfoJson"/>";
+                    var viewer = OpenSeadragon({
+                    id: "osd_viewer",
+                    tileSources: {
+                    type: 'image',
+                    url: source
+                    },
+                    prefixUrl:"https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
+                    });
+                </script>
             </body>
         </html>
     </xsl:template>
