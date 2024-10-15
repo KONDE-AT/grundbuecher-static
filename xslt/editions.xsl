@@ -149,7 +149,7 @@
                                         Patrick/Weinbergmair, Richard/Grünwald, Korbinian: Ein Wiener
                                         Grundbuch
                                         des 15. Jahrhunderts. Digitale Edition des Satzbuch CD (1438-1473).
-                                        (Mai 2021), full text: https://grundbuecher.acdh.oeaw.ac.at/<xsl:value-of select="$self_link"/>
+                                        (Mai 2021), https://grundbuecher.acdh.oeaw.ac.at/<xsl:value-of select="$self_link"/>
                                     </cite>
                                 </blockquote>
                             </p>
