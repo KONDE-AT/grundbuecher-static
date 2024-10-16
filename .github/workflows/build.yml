@@ -36,6 +36,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Install Saxon, Ant and Fundament
         run: |
           apt-get update && apt-get install openjdk-11-jre-headless ant -y --no-install-recommend
@@ -44,6 +48,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build the app
         run: ant
+      - name: Build seach index
+        run: python make_ts_index.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
