@@ -3,58 +3,88 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xsl xs"
+    exclude-result-prefixes="#all"
     version="2.0">
     <xsl:template match="/" name="html_footer">
-        <footer class="main-footer">
-            <div class="container">
-                <div class="footer-wrapper">
-                    <div class="footer-sep">
-                        <em class="far fa-comment"/> <a href="kontakt.html">Kontakt</a>
+        <footer class="footer mt-auto py-3 bg-body-tertiary">
+            <div class="container p-4">
+                <div class="row my-4">
+                    <div class="col-lg-2 col-md-6 mb-4 mb-md-0" align="right">
+                        <div>
+                            <a href="https://geschichtsforschung.univie.ac.at/">
+                                <img src="images/uni_wien_logo.png" class="footerimage" />
+                            </a>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a href="https://www.oeaw.ac.at/acdh/acdh-home/" target="_blank" rel="noopener" aria-label="ACDH">
-                                <img src="https://shared.acdh.oeaw.ac.at/acdh-common-assets/images/acdh_logo.svg" alt="ACDH" title="Austrian Centre for Digital Humanities"/>
+                    <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                        <p>
+                            Institut für Wirtschafts- und Sozialgeschichte
+                            <br></br>
+                            Universtiät Wien
+                            <br></br>
+                            Universitätsring 1
+                            <br></br>
+                            1010 Wien
+                        </p>
+                        <p>
+                            T: +43-1-4277-272 01
+                            <br></br>
+                            <a href="https://wirtschaftsgeschichte.univie.ac.at/">Website</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-1 col-md-6 mb-4 mb-md-0" align="right">
+                        <div>
+                            <a href="https://www.oeaw.ac.at/acdh/acdh-ch-home">
+                                <img src="images/acdhch_logo.png" class="footerimage"></img>
                             </a>
                         </div>
-                        <div class="col-md-2">
-                            <a href="https://wirtschaftsgeschichte.univie.ac.at/" target="_blank" rel="noopener" aria-label="Institut für Wirtschafts- und Sozialgeschichte">
-                                <img src="https://shared.acdh.oeaw.ac.at/wgb/img/logo_wiso.png" alt="Institut für Wirtschafts- und Sozialgeschichte" title="Institut für Wirtschafts- und Sozialgeschichte"/>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                        <p>
+                            ACDH-CH
+                            <br></br>
+                            Austrian Centre for Digital Humanities and Cultural Heritage
+                            <br></br>
+                            Österreichische Akademie der Wissenschaften
+                        </p>
+                        <p>
+                            Bäckerstraße 13
+                            <br></br>
+                            1010 Wien
+                        </p>
+                        <p>
+                            T: +43 1 51581-2200
+                            <br></br>
+                            E: <a href="mailto:acdh-ch-helpdesk@oeaw.ac.at">acdh-ch-helpdesk@oeaw.ac.at</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0" align="right">
+                        <div class="text-center">
+                            <p>
+                            Gefördert durch Stadt Wien Kulturabteilung (MA 7)
+                            
+                            <a href="https://www.wien.gv.at/kultur/abteilung/">
+                                <img src="images/logo_MA_7.jpg" class="footerimage"></img>
                             </a>
+                            </p>
                         </div>
-                        <div class="col-md-2">
-                            <a href="https://www.univie.ac.at/" target="_blank" rel="noopener" aria-label="Universität Wien">
-                                <img src="https://shared.acdh.oeaw.ac.at/wgb/img/logo_uni_wien.png" alt="Universität Wien" title="Universität Wien"/>
+                        <div class="text-center">
+                            <p>
+                                Faksimiles zur Verfügung gestellt vom Wiener Stadt- und Landesarchiv (MA 8)
+                            <a href="https://www.wien.gv.at/kultur/archiv/">
+                                <img src="images/logo_wstla.jpg" class="footerimage"></img>
                             </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://www.wien.gv.at/kultur/archiv/" target="_blank" rel="noopener" aria-label="Wiener Stadt- und Landesarchiv (MA 8)">
-                                <img src="https://shared.acdh.oeaw.ac.at/wgb/img/logo_wstla.jpg" alt="Wiener Stadt- und Landesarchiv (MA 8)" title="Wiener Stadt- und Landesarchiv (MA 8)"/>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://www.wien.gv.at/kultur/abteilung/" target="_blank" rel="noopener" aria-label="Kulturabteilung (MA 7)">
-                                <img src="https://shared.acdh.oeaw.ac.at/wgb/img/logo_MA_7.jpg" alt="Kulturabteilung (MA 7)" title="Kulturabteilung (MA 7)"/>
-                            </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-imprint-bar">
-                <a href="imprint.html">Impressum/Imprint</a>
-                <div class="row" style="padding-top: 20px;">
-                    <div class="col-sm">
-                        <a href="https://github.com/KONDE-AT/grundbuecher-static">
-                            <em class="fab fa-github-square fa-2x"/>
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center">
+                <a href="https://github.com/KONDE-AT/grundbuecher-static"><i class="bi bi-github fs-2"></i></a>
             </div>
         </footer>
-        <!--<script type="text/javascript" src="dist/fundament/vendor/jquery/jquery.min.js"></script>-->
-        <script type="text/javascript" src="js/fundament.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.11.0/b-2.0.0/b-html5-2.0.0/cr-1.5.4/r-2.2.9/sp-1.4.0/datatables.min.js"></script>
-        <script type="text/javascript" src="js/dt.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        
     </xsl:template>
 </xsl:stylesheet>
