@@ -12,12 +12,12 @@ files = glob.glob("./data/editions/*/*.xml")
 
 
 try:
-    client.collections["Grundbücher"].delete()
+    client.collections["grundbuecher"].delete()
 except ObjectNotFound:
     pass
 
 current_schema = {
-    "name": "Grundbücher",
+    "name": "grundbuecher",
     "fields": [
         {"name": "id", "type": "string"},
         {"name": "rec_id", "type": "string"},
@@ -68,12 +68,14 @@ for x in tqdm(files, total=len(files)):
         body = doc.any_xpath(p_group)
         pages += 1
         cfts_record = {
-            "project": "Grundbücher",
+            "project": "grundbuecher",
         }
         record = {}
         record["id"] = os.path.split(x)[-1].replace(".xml", f".html?tab={str(pages)}")
         cfts_record["id"] = record["id"]
-        cfts_record["resolver"] = f"https://github.com/KONDE-AT/grundbuecher-static/{record['id']}"
+        cfts_record["resolver"] = (
+            f"https://github.com/KONDE-AT/grundbuecher-static/{record['id']}"
+        )
         record["rec_id"] = os.path.split(x)[-1]
         cfts_record["rec_id"] = record["rec_id"]
         r_title = " ".join(
@@ -137,12 +139,10 @@ for x in tqdm(files, total=len(files)):
                 cfts_record["full_text"] = record["full_text"]
                 cfts_records.append(cfts_record)
 
-make_index = client.collections[
-    "Grundbücher"
-].documents.import_(records)
+make_index = client.collections["grundbuecher"].documents.import_(records)
 print(make_index)
-print("done with indexing Grundbücher")
+print("done with indexing grundbuecher")
 
 make_index = CFTS_COLLECTION.documents.import_(cfts_records, {"action": "upsert"})
 print(make_index)
-print("done with cfts-index Grundbücher")
+print("done with cfts-index grundbuecher")

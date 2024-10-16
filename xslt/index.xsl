@@ -39,7 +39,7 @@
                                     <a href="search.html" type="button"
                                         class="btn btn-primary btn-lg px-4 me-md-2">Suche im Volltext
                                     </a>
-                                    <a href="passages.html" type="button"
+                                    <a href="toc.html" type="button"
                                         class="btn btn-outline-secondary btn-lg px-4">Alle Einträge</a>
                                 </div>
                             </div>
