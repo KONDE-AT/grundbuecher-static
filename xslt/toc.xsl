@@ -27,21 +27,23 @@
             <body class="d-flex flex-column h-100">
             <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0 flex-grow-1">
-                    <div class="container">
-                        <h1>Inhaltsverzeichnis</h1>
+                    <div class="container pt-3">
+                        <h1 class="text-center p3">Inhaltsverzeichnis</h1>
                         <table id="myTable">
                             <thead>
                                 <tr>
                                     <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                    <th scope="col" tabulator-headerFilter="input">Titel</th>
+                                    <th scope="col" tabulator-minWidth="350" tabulator-headerFilter="input">Titel</th>
+                                    <th scope="col" tabulator-headerFilter="input">Verwaltung</th>
                                     <th scope="col" tabulator-headerFilter="input">Dateinname</th>
+                                    <th scope="col" tabulator-headerSort="false" tabulator-download="false" tabulator-visible="false">linktodoc</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <xsl:for-each
                                     select="collection('../data/editions?select=*.xml')//tei:TEI">
                                     <xsl:variable name="full_path">
-                                        <xsl:value-of select="document-uri(/)"/>
+                                        <xsl:value-of select="data(@xml:id)"/>
                                     </xsl:variable>
                                     <tr>
                                         <td>
@@ -59,7 +61,14 @@
                                                 select=".//tei:titleStmt/tei:title[1]/text()"/>
                                         </td>
                                         <td>
+                                            <xsl:value-of select="normalize-space(string-join(.//tei:title[@type='rubrik']//text()))"/>
+                                        </td>
+                                        <td>
                                             <xsl:value-of select="tokenize($full_path, '/')[last()]"
+                                            />
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="replace((tokenize($full_path, '/')[last()]), '.xml', '.html')"
                                             />
                                         </td>
                                     </tr>
