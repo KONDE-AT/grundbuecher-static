@@ -22,6 +22,11 @@ except ObjectNotFound:
 current_schema = {
     "name": COLLECTION_NAME,
     "enable_nested_fields": True,
+    "metadata": {
+        "owners": ["Peter Andorfer"],
+        "description": "https://github.com/KONDE-AT/grundbuecher-static",
+        "service_ids": [12131],
+    },
     "fields": [
         {"name": "id", "type": "string", "sort": True},
         {"name": "rec_id", "type": "string", "sort": True},
